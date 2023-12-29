@@ -1,0 +1,50 @@
+﻿@page "/"
+
+
+@using Syncfusion.Blazor.HeatMap;
+
+<SfHeatMap ID="heatmap" DataSource="@HeatMapData">
+    <HeatMapTitleSettings Text="Sales Revenue per Employee (in 1000 US$)"></HeatMapTitleSettings>
+    <HeatMapCellSettings ShowLabel="true" TileType="CellType.Rect">
+        <HeatMapCellBorder Width="0" Color="White"></HeatMapCellBorder>
+    </HeatMapCellSettings>
+</SfHeatMap>
+
+@code{
+    int[,] GetDefaultData()
+    {
+        int[,] dataSource = new int[,]
+        {
+            {52, 65, 67, 45, 37, 52},
+            {68, 52, 63, 51, 30, 51},
+            {7, 16, 47, 47, 88, 6},
+            {66, 64, 46, 40, 47, 41},
+            {14, 46, 97, 69, 69, 3},
+            {54, 46, 61, 46, 40, 39}
+        };
+        return dataSource;
+    }
+    public object HeatMapData { get; set; }
+    protected override void OnInitialized()
+    {
+        HeatMapData = GetDefaultData();
+    }
+   
+
+    public class CellRect
+    {
+        public double width { get; set; }
+        public double height { get; set; }
+
+        public double x { get; set; }
+
+        public double y { get; set; }
+    }
+
+}
+
+<style>
+    svg{
+        shape-rendering :crispEdges;
+    }
+</style>

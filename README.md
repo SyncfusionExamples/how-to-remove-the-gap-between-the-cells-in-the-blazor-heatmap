@@ -1,2 +1,2 @@
-# how-to-remove-the-entire-gap-between-the-cells-in-the-blazor-heatmap
-This article explains how to remove the entire gap between the cells in the Blazor HeatMap.
+# Example of removing the entire gap between the cells in the Syncfusion Blazor HeatMap component
+In this Blazor project, we created a sample to demonstrate how to remove the entire gap between the cells in the Blazor HeatMap.
